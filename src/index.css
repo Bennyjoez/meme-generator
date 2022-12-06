@@ -19,8 +19,8 @@ button:hover {
   background: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);;
 }
 .meme-cover-image {
-  height: 40px;
-  margin-right: 10px;
+  height: 2.5rem;
+  margin-right: 0.625rem;
 }
 .main-title {
   margin-right: auto;
@@ -28,32 +28,35 @@ button:hover {
 
 /* main content */
 .main-content-container {
+  width: 90%;
+  margin: auto;
+  display: grid;
+  grid-template-areas: 
+        "A B"
+        "C C";
+  gap: 1.25rem;
+  padding: 0.5rem;
+  padding-block: 3.125rem;
+}
+form {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-block: 50px;
+}
+.top {
+  grid-area: A;
+}
+.bottom {
+  grid-area: B;
 }
 
-.inputs-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin-bottom: 20px;
-}
 .inputs {
-  width: 45%;
   height: 35px;
-  margin: auto;
   border: 1px solid #D5D4D8;
   border-radius: 5px;
+  text-indent: 10px;
 }
 .newMemeBtn {
-  width: 80%;
+  grid-area: C;
   height: 40px;
-  margin: auto;
   background: linear-gradient(90.41deg, #711F8D 1.14%, #A818DA 100%);
   border-radius: 5px;
   border: none;
@@ -74,4 +77,18 @@ button:hover {
 }
 .preview {
   max-height: 600px;
+}
+
+@media (max-width: 500px) {
+  .main-content-container {
+    grid-template-areas: 
+        "A"
+        "B"
+        "C";
+  }
+  .inputs {
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 0.05rem;
+  }
 }
