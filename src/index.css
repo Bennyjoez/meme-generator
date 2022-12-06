@@ -38,9 +38,7 @@ button:hover {
   padding: 0.5rem;
   padding-block: 3.125rem;
 }
-form {
-  width: 100%;
-}
+
 .top {
   grid-area: A;
 }
