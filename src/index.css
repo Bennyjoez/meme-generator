@@ -75,6 +75,8 @@ button:hover {
 }
 .preview {
   max-height: 600px;
+  display: grid;
+  place-items: center;
 }
 
 @media (max-width: 500px) {
