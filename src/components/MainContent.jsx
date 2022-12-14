@@ -9,10 +9,16 @@ export default function MainContent() {
         randomImage: "https://i.imgflip.com/30b1gx.jpg"
     })
 
-    const [allMemeImages, setAllMemeImages] = React.useState({memesData})
+    const [allMemes, setAllMemes] = React.useState({memesData})
+
+    React.useEffect(() => {
+        fetch("https://api.imgflip.com/get_memes")
+            .then(res => res.json())
+            .then(data => setAllMemes(data))
+    }, [])
 
     function handleClick() {
-        const memesArr = allMemeImages.memesData.data.memes
+        const memesArr = allMemes.data.memes
         const randomIndex = Math.floor(Math.random() * memesArr.length)
         let randomUrl = memesArr[randomIndex].url
         setMeme(prevMeme => {
@@ -32,7 +38,6 @@ export default function MainContent() {
         }))
     }
 
-    console.log(meme)
     return (
         <div className="outer-main-container" >
             <div className="main-content-container" >
