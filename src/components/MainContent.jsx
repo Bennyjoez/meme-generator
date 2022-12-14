@@ -1,8 +1,8 @@
 import React from "react"
 
-export default function MainContent() {
+function MainContent() {
     // use state
-    let [meme, setMeme] = React.useState({
+    const [meme, setMeme] = React.useState({
         topText: "",
         bottomText: "",
         randomImage: "https://i.imgflip.com/30b1gx.jpg"
@@ -68,3 +68,5 @@ export default function MainContent() {
         </div>
     )
 }
+
+export default MainContent
