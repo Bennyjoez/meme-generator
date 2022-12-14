@@ -23,15 +23,44 @@ export default function MainContent() {
         })
     }
 
+    function handleChange(event) {
+        const {name, value} = event.target
+        
+        setMeme(prevMeme => ({
+            ...prevMeme,
+            [name]: value
+        }))
+    }
+
+    console.log(meme)
     return (
         <div className="outer-main-container" >
             <div className="main-content-container" >
-                <input type="text" id="top" placeholder="Message Top" className="top inputs" />
-                <input type="text" id="bottom" placeholder="Message Bottom" className="bottom inputs" />
+                <input 
+                    type="text" 
+                    id="top" 
+                    placeholder="Message Top" 
+                    className="inputs" 
+                    name="topText"
+                    onChange={handleChange}
+                    value={meme.topText}
+                />
+                
+                <input 
+                    type="text" 
+                    id="bottom" 
+                    placeholder="Message Bottom" 
+                    className="inputs" 
+                    name="bottomText"
+                    onChange={handleChange}
+                    value={meme.bottomText}
+                />
                 <button className="newMemeBtn" onClick={handleClick} >Get a New Meme Image</button>
             </div>
             <div className="preview" >
                 <img src={meme.randomImage} className="memeSample" />
+                <h2 className="top-text">{meme.topText}</h2>
+                <h2 className="bottom-text">{meme.bottomText}</h2>
             </div>
         </div>
     )

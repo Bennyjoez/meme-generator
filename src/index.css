@@ -78,6 +78,25 @@ button:hover {
   max-height: 600px;
   display: grid;
   place-items: center;
+  position: relative;
+}
+
+.bottom-text, .top-text {
+  position: absolute;
+  color: white;
+  font-size: 2.2rem;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  width: 25ch;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.bottom-text {
+  bottom: 20px;
+}
+.top-text {
+  top: 10px;
 }
 
 @media (max-width: 500px) {
@@ -91,5 +110,8 @@ button:hover {
     text-align: center;
     font-weight: 600;
     letter-spacing: 0.05rem;
+  }
+  .bottom-text, .top-text {
+    font-size: 1.5rem;
   }
 }
